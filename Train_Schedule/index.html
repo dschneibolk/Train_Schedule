@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Train Schedule</title>
+    <!-- Bootstrap CSS CDN  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
+
+    <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <!-- Firebase -->
+    <script src="https://www.gstatic.com/firebasejs/5.8.6/firebase.js"></script>
+    <!-- Style to fix the issue of text extending past card length -->
+    <style>
+        .card-body a {
+      word-break: break-all;
+    }
+
+    .articleHeadline {
+      line-height: 1.5;
+    }
+  </style>
+</head>
+
+<body>
+
+    <!-- Main Bootstrap Search -->
+    <div class="container">
+
+        <!-- Jumbotron for Title -->
+        <div class="jumbotron" style="background-color: #20315A ; color: white;">
+            <h1 class="text-center">
+                <strong>
+                    <i class=></i>Dumb train pun</strong>
+            </h1>
+        </div>
+        <table class="table border border-primary">
+            <thead>
+                <tr>
+                    <th scope="col">Train Name</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Frequency</th>
+                    <th scope="col">Next Arrival</th>
+                    <th scope="col">Minutes Away</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row">HTML</th>
+                    <td>San Francisco</td>
+                    <td>20</td>
+                    <td>2:22</td>
+                    <td>@mdo</td>
+                </tr>
+                <tr>
+                    <th scope="row">CSS</th>
+                    <td>Austin</td>
+                    <td>19</td>
+                    <td>11:11</td>
+                    <td>@fat</td>
+                </tr>
+                <tr>
+                    <th scope="row">JS</th>
+                    <td>New Orleans</td>
+                    <td>12</td>
+                    <td>12:12</td>
+                    <td>@twitter</td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Row for Searching New York Times -->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+                <!-- First card is for handling the search parameters -->
+                <div class="card">
+                    <div class="card-header-primary">
+                        <strong>
+                            <i class="fa fa-list-alt"></i> Search Parameters</strong>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- Here we create an HTML Form for handling the inputs-->
+                        <form role="form">
+
+                            <!-- Here we create the text box for capturing the search term-->
+                            <div class="form-group">
+                                <label for="search">Train Name:</label>
+                                <input type="text" class="form-control" id="search-term">
+                            </div>
+
+                            <!-- Here we capture the number of records that the user wants to retrieve  -->
+                            <div class="form-group">
+                                <label for="pwd">Destination:</label>
+                                <select id="article-count" class="custom-select" aria-labelledby="dropdownMenuButton">
+                                    <option selected value="1">1</option>
+                                    <!-- Setting the option for 5 as default -->
+                                    <option value="5" selected>5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+
+                            <!-- Here we capture the Start Year Parameter-->
+                            <div class="form-group">
+                                <label for="start-year">First Train Time:</label>
+                                <input type="text" class="form-control" id="start-year">
+                            </div>
+
+                            <!-- Here we capture the End Year Parameter -->
+                            <div class="form-group">
+                                <label for="end-year">Frequency (HH:mm - Military Time):</label>
+                                <input type="text" class="form-control" id="end-year">
+                            </div>
+
+                            <!-- Here we have our final submit button -->
+                            <button type="submit" class="btn btn-default" id="submitButton">
+                                <i class="fa fa-search"></i> Search</button>
+                            <button class="btn btn-default" id="clear-all">
+                                <i class="fa fa-trash"></i> Clear Results</button>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- This row will handle all of the retrieved articles -->
+        <div class="row">
+            <div class="col-sm-12">
+                <br>
+
+                <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
+                <div class="card">
+
+                    <!-- card Heading for the retrieved articles box -->
+                    <div class="card-header">
+                        <strong>
+                            <i class="fa fa-table"></i> Top Articles</strong>
+                    </div>
+
+                    <!-- This main card will hold each of the resulting articles -->
+                    <div class="card-body" id="article-section">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Region -->
+        <div class="row">
+            <div class="col-sm-12">
+
+                <!-- Line Break followed by closing -->
+                <hr>
+                <h5 class="text-center">
+                    <small>Made with lots and lots of
+                        <i class="fa fa-x"></i>
+                    </small>
+                </h5>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- jQuery JS -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/locale/af.js"></script>
+    <!-- Code to the JavaScript File -->
+    <script src="NYTCode.js"></script>
+
+</body>
+
+</html>
